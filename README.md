@@ -1,24 +1,16 @@
 # ⚡ Electricity Bill Calculator
 
-```{=html}
 <p align="center">
-```
-`<img src="screenshots/home-page.png" alt="Electricity Bill Calculator - Home Page" width="800">`{=html}
-```{=html}
+  <img src="screenshots/home-page.png" alt="Electricity Bill Calculator - Home Page" width="800">
 </p>
-```
-```{=html}
-<p align="center">
-```
-`<img src="screenshots/bill-result.png" alt="Electricity Bill Calculator - Bill Result" width="800">`{=html}
-```{=html}
-</p>
-```
-A responsive **Electricity Bill Calculator** developed using **JSP,
-HTML5, CSS3, and JavaScript**, designed to run on **Apache Tomcat 9**.
 
-The application calculates an electricity bill using a slab-based tariff
-and performs the final calculation **server-side using JSP/Java**.
+<p align="center">
+  <img src="screenshots/bill-result.png" alt="Electricity Bill Calculator - Bill Result" width="800">
+</p>
+
+A responsive **Electricity Bill Calculator** developed using **JSP, HTML5, CSS3, and JavaScript**, designed to run on **Apache Tomcat 9**.
+
+The application calculates an electricity bill using a slab-based tariff and performs the final calculation **server-side using JSP/Java**.
 
 ------------------------------------------------------------------------
 
