@@ -1,0 +1,229 @@
+:root {
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --card-shadow: 0 20px 45px rgba(29, 46, 88, 0.14);
+    --primary: #0f6cbd;
+    --primary-dark: #0a4f86;
+    --accent: #16a34a;
+    --text: #1e293b;
+    --muted: #64748b;
+    --danger: #d93025;
+    --border: #dbe4f0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top left, #d9ebff, transparent 35%),
+        linear-gradient(135deg, #eaf2ff, #f8fbff);
+    color: var(--text);
+}
+
+.app-shell {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.calculator-card,
+.result-card {
+    width: min(100%, 720px);
+    background: var(--card);
+    border-radius: 24px;
+    box-shadow: var(--card-shadow);
+    padding: 28px;
+    border: 1px solid rgba(15, 108, 189, 0.08);
+    animation: floatIn 0.5s ease;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: #dff0ff;
+    color: var(--primary-dark);
+    padding: 6px 10px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+}
+
+h1 {
+    margin: 0 0 10px;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.bill-form {
+    display: grid;
+    gap: 16px;
+}
+
+.field-label {
+    font-weight: 700;
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.input-wrap input {
+    width: 100%;
+    padding: 16px 18px 16px 18px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    font-size: 1rem;
+    transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.input-wrap input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(15, 108, 189, 0.15);
+    transform: translateY(-1px);
+}
+
+.unit-suffix {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.validation-message {
+    min-height: 24px;
+    color: var(--danger);
+    font-weight: 700;
+}
+
+.button-group,
+.result-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: none;
+    border-radius: 12px;
+    padding: 14px 20px;
+    font-size: 0.98rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(15, 108, 189, 0.28);
+}
+
+.btn-secondary {
+    background: #eef5fb;
+    color: var(--primary-dark);
+}
+
+.result-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.summary-item {
+    background: #f8fbff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.summary-item span {
+    display: block;
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.summary-item strong {
+    font-size: 1.1rem;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.bill-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.bill-table th,
+.bill-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+
+.bill-table thead th {
+    background: #f3f7fd;
+    font-weight: 700;
+}
+
+.bill-table tbody tr:hover {
+    background: #f9fbff;
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 640px) {
+    .calculator-card,
+    .result-card {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .result-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
